@@ -1,0 +1,28 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AT@Home</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div id="content">
+            Welcome to AT@Home{% if message == "Login" %}. <a href="/admin">{{ message }}</a>{% else %}, {{ user }}!
+            <table>
+                <tr>
+                    <th>Name</th>
+                    <th>Description</th>
+                    <th>Location</th>
+                </tr>
+                {% for at in at_devices %}
+                <tr>
+                    <td>{{ at.name }}</td>
+                    <td>{{ at.description }}</td>
+                    <td>{{ at.location }}</td>
+                </tr>
+                {% endfor %}
+            </table>
+            <button value="add_device" onclick="window.location.href='add_device'">Add AT Device</button>{% endif %}
+        </div>
+    </body>
+</html>

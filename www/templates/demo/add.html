@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AT@Home</title>
+    </head>
+    <body>
+        Add an AT device:
+        <p>
+            <form method="POST">{% csrf_token %}
+                <label for="at_name">Name: </label>
+                <input type="text" maxlength="200" name="name" id="at_name"><br>
+                <label for="at_desc">Description: </label>
+                <input type="text" maxlength="1000" name="description" id="at_desc"><br>
+                <label for="at_loc">Location: </label>
+                <input type="number" name="location" min="0" id="at_loc"><br>
+                <input type="submit" value="Save">
+            </form>
+        </p>
+    </body>
+</html>

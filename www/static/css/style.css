@@ -1,0 +1,16 @@
+#content {
+    width: 50vw;
+    margin: auto;
+    margin-top: 5vh;
+}
+
+table {
+    border-collapse: collapse;
+    width: 100%;
+}
+
+table tr th, table tr td {
+    border: lightblue solid 1px;
+    padding: 10px;
+}
+
