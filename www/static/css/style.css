@@ -4,6 +4,14 @@
     margin-top: 5vh;
 }
 
+#new_user {
+    color: green;
+}
+
+.heavy {
+    font-weight: bolder;
+}
+
 table {
     border-collapse: collapse;
     width: 100%;

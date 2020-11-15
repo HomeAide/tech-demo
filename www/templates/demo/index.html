@@ -7,7 +7,7 @@
     </head>
     <body>
         <div id="content">
-            Welcome to AT@Home{% if message == "Login" %}. <a href="/admin">{{ message }}</a>{% else %}, {{ user }}!
+            Welcome to AT@Home <a href="/admin">{{ user }}</a>! <a href="create_user">Create new user</a> <a href="signout">Logout</a>
             <table>
                 <tr>
                     <th>Name</th>
@@ -22,7 +22,7 @@
                 </tr>
                 {% endfor %}
             </table>
-            <button value="add_device" onclick="window.location.href='add_device'">Add AT Device</button>{% endif %}
+            <button value="add_device" onclick="window.location.href='add_device'">Add AT Device</button>
         </div>
     </body>
 </html>

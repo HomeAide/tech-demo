@@ -1,11 +1,13 @@
+{% load static %}
 <!DOCTYPE html>
 <html>
     <head>
         <title>AT@Home</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
     </head>
     <body>
-        Add an AT device:
-        <p>
+        <div id="content">
+            Add an AT device:
             <form method="POST">{% csrf_token %}
                 <label for="at_name">Name: </label>
                 <input type="text" maxlength="200" name="name" id="at_name"><br>
@@ -15,6 +17,6 @@
                 <input type="number" name="location" min="0" id="at_loc"><br>
                 <input type="submit" value="Save">
             </form>
-        </p>
+        </div>
     </body>
 </html>

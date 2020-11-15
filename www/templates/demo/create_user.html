@@ -1,0 +1,18 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Add a New User</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    </head>
+    <body>
+        <div id="content">
+            <form method="POST">
+                {% csrf_token %}
+                {{ form }}
+                {% if new_user != "" %}<p style="color:green;">Account created for: <span style="font-weight:bolder;">{{ new_user }}</span><br>Temporary password: <span style="font-weight:bolder;">{{ password }}</span></p>{% endif %}
+                <p><input type="submit" value="Create"></p>
+            </form>
+        </div>
+    </body>
+</html>
