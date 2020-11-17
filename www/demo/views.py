@@ -1,6 +1,8 @@
+from django.core import serializers
 from django.shortcuts import render, redirect
 from django.contrib.auth import authenticate, login, logout
 from django.contrib.auth.forms import AuthenticationForm, UserCreationForm
+from django.http import JsonResponse, HttpResponse, HttpResponseNotFound
 from .models import AT
 
 # Create your views here.
@@ -78,3 +80,14 @@ def signin(request):
 def signout(request):
     logout(request)
     return redirect('signin')
+
+def get_devices(request, type, location):
+    query = AT.objects.filter(location=location)
+    if type.lower() == "json":
+        data =  serializers.serialize("json", query)
+        return JsonResponse(data, safe=False)
+    elif type.lower() == "xml":
+        data =  serializers.serialize("xml", query)
+        return HttpResponse(data, content_type="text/xml")
+    else:
+        return HttpResponseNotFound()

@@ -7,4 +7,5 @@ urlpatterns = [
     path('create_user', views.create_user, name='create_user'),
     path('signin', views.signin, name='signin'),
     path('signout', views.signout, name='signout'),
+    path('get_devices/<str:type>/<int:location>', views.get_devices),
 ]
