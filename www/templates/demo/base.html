@@ -1,0 +1,26 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AT@Home{% block title %}{% endblock title %}</title>
+        <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    {% block head %}
+    {% endblock head %}
+    </head>
+    <body>
+        <div id="header">
+            <div id="title">AT@Home</div>
+            {% if user.is_authenticated %}<div id="welcome">Welcome to AT@Home <a href="/admin">{{ user }}</a></div>{% endif %}
+            <div id="navbar">
+                <ul id="navbar-row">
+                    <li><a href="/">Home</a></li>{% if user.is_authenticated %}
+                    <li><a href="/admin">Administration</a></li>
+                    <li><a href="create_user">Create New User</a></li>
+                    <li><a href="signout">Logout</a></li>{% endif %}
+                </ul>
+            </div>
+        </div>
+    {% block body %}
+    {% endblock body %}
+    </body>
+</html>

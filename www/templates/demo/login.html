@@ -1,16 +1,9 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Add a New User</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
+{% extends "demo/base.html" %}
+{% block body %}
         <div id="content">
             <form method="POST">{% csrf_token %}
                 {{ form }}
                 <input type="submit" value="Login">
             </form>
         </div>
-    </body>
-</html>
+{% endblock body %}

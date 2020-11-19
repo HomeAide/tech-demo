@@ -1,11 +1,5 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>AT@Home</title>
-        <link rel="stylesheet" href="{% static 'css/style.css' %}">
-    </head>
-    <body>
+{% extends "demo/base.html" %}
+{% block body %}
         <div id="content">
             Add an AT device:
             <form method="POST">{% csrf_token %}
@@ -18,5 +12,4 @@
                 <input type="submit" value="Save">
             </form>
         </div>
-    </body>
-</html>
+{% endblock body %}

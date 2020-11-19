@@ -1,3 +1,66 @@
+/* Base styles */
+#header {
+    background-color: #417690;
+    color: #f5dd5d;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    height: 120px;
+    margin: 0;
+    position: relative;
+    width: 100%;
+}
+
+#title {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 3rem;
+    margin-left: 20px;
+    vertical-align: middle;
+}
+
+#welcome {
+    float: right;
+    position: static;
+    margin-right: 10px;
+}
+
+#navbar {
+    background-color: oldlace;
+    bottom: 2px;
+    color: black;
+    font-size: medium;
+    position: absolute;
+    width: 100%;
+    vertical-align: middle;
+}
+
+#navbar-row {
+    list-style-type: none;
+    margin: 0;
+    margin-left: 10px;
+    padding: 0;
+}
+
+#navbar-row li {
+    float: left;
+    margin-right: 20px;
+}
+
+#navbar-row li a {
+    display: block;
+    padding: 8px;
+    text-decoration: none;
+}
+
+#navbar-row li a:hover {
+    background-color: gold;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Page styles */
+
 #content {
     width: 50vw;
     margin: auto;
