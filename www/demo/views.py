@@ -84,8 +84,12 @@ def signout(request):
 def get_devices(request, type, location):
     query = AT.objects.filter(location=location)
     if type.lower() == "json":
-        data =  serializers.serialize("json", query)
-        return JsonResponse(data, safe=False)
+        query_dict = {}
+        index = 0
+        for result in query:
+            query_dict[index] = {"name": result.name, "description": result.description}
+            index += 1
+        return JsonResponse(query_dict)
     elif type.lower() == "xml":
         data =  serializers.serialize("xml", query)
         return HttpResponse(data, content_type="text/xml")
